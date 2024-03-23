@@ -7,6 +7,9 @@ RUN apt-get update && apt-get install -y \
     libnacl-dev \
     libffi-dev \
     && rm -rf /var/lib/apt/lists/*
+    
+# python-dotenvのインストール
+RUN python3 -m pip install -U python-dotenv
 
 # 作業ディレクトリの設定
 WORKDIR /bot
@@ -18,4 +21,4 @@ RUN python3 -m pip install -U discord.py
 COPY . .
 
 # Botを実行
-CMD ["python", "./bot.py"]
+CMD ["python3", "./bot.py"]
