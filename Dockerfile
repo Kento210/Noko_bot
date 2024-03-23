@@ -11,6 +11,9 @@ RUN apt-get update && apt-get install -y \
 # python-dotenvのインストール
 RUN python3 -m pip install -U python-dotenv
 
+# OpenAIライブラリのインストール
+RUN python3 -m pip install -U openai
+
 # 作業ディレクトリの設定
 WORKDIR /bot
 
